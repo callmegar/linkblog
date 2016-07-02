@@ -15,8 +15,8 @@ module Octopress
       def merge_payload(payload, site)
         {
           'site' => {
-            'linkposts' => site.posts.select {|p| p.data['linkpost']},
-            'articles'  => site.posts.reject {|p| p.data['linkpost']}
+            'linkposts' => site.posts.docs.select {|p| p.data['linkpost']},
+            'articles'  => site.posts.docs.reject {|p| p.data['linkpost']}
           }
         }
       end
